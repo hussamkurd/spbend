@@ -37,7 +37,6 @@ public class spbendApi {
      * Post render amount in USD on highchart candelsticks at current rates
      * minus percent taken as profit and include main transaction info. Further
      * it log the information for the transaction
-     *
      * @param ItemTransactionMainInfo representation all the transaction info
      * @return ItemTransactionMainInfo in json to be rendered on high chart
      */
@@ -64,15 +63,20 @@ public class spbendApi {
     }
 
     /**
-     * PUT method for updating or creating an instance of spbendApi
-     *
-     * @param content representation for the resource
-     * @return an HTTP response with content of the updated or created resource.
+     * PUT receive amount equal to price at current rates. 
+     * render amount in BTC on highchart candlesticks and include Transaction info
+     * Further it log the information for the transaction in BTC info and call POST request 
+     * @param ItemTransactionMainInfo representation all the transaction info
+     * @return ItemTransactionBTCInfo contain the BTC info
      */
     @PUT
     @Consumes("application/json")
     @Produces("application/json")
-    public void putJson(ItemTransactionMainInfo ItemTRInfo) {
+    public ItemTransactionBTCInfo putJson(ItemTransactionMainInfo ItemTRInfo) {
+        //convert the transaction price for currenct into BTC
+        //log the information 
+        ItemTransactionBTCInfo ItemBTCInfo= new ItemTransactionBTCInfo();
         
+        return ItemBTCInfo;
     }
 }
