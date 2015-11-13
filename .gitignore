@@ -1,1 +1,12 @@
 /spbend/nbproject/private/
+spbend/nbproject/ant-deploy.xml
+
+spbend/nbproject/build-impl.xml
+
+spbend/nbproject/genfiles.properties
+
+spbend/nbproject/project.properties
+
+spbend/nbproject/project.xml
+
+spbend/nbproject/rest-build.xml
