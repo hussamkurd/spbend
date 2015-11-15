@@ -46,8 +46,10 @@ public class spbendApi {
     @Produces("application/json")
     public ItemTransactionMainInfo postJson(ItemTransactionMainInfo TR){
         //log the information
+        /*
         Database db = new Database();
         db.insertTransactionMainInfo(TR);
+        */
         return TR;
 
     }
