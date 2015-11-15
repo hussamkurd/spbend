@@ -5,6 +5,7 @@
  */
 package com.ben.spbendresourse;
 
+import java.io.FileNotFoundException;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.PathParam;
@@ -43,15 +44,34 @@ public class spbendApi {
     @POST
     @Consumes("application/json")
     @Produces("application/json")
-    public ItemTransactionMainInfo postJson(ItemTransactionMainInfo TR) {
-
-        //TODO log the information
+    public ItemTransactionMainInfo postJson(ItemTransactionMainInfo TR){
+        //log the information
+        Database db = new Database();
+        db.insertTransactionMainInfo(TR);
         return TR;
 
     }
+    /*
+    @GET
+    @Produces("application/json")
 
-
-
+    public String getJson() throws FileNotFoundException {
+        String test = "";
+        //TODO log the information
+        MongoClient mongoClient = new MongoClient();      
+        MongoDatabase db = mongoClient.getDatabase("test");
+        final PrintWriter out = new PrintWriter("D:\\filename.txt");
+        FindIterable<Document> iterable = db.getCollection("restaurants").find(
+        new Document("borough", "Manhattan"));
+        iterable.forEach(new Block<Document>() {
+           @Override
+           public void apply(final Document document) {
+               System.out.println(document);
+               out.println(document);
+           }
+       });       
+        return null;
+    }
     /**
      * PUT receive amount equal to price at current rates. 
      * render amount in BTC on highchart candlesticks and include Transaction info
