@@ -1,2 +1,0 @@
-# spbend
-exchange api protocol

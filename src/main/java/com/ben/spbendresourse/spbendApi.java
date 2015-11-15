@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main;
+package com.ben.spbendresourse;
 
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
@@ -21,7 +21,7 @@ import javax.ws.rs.POST;
  *
  * @author hussamelkurd
  */
-@Path("api")
+@Path("transactions")
 public class spbendApi {
 
     @Context
@@ -50,17 +50,7 @@ public class spbendApi {
 
     }
 
-    /**
-     * Retrieves representation of an instance of main.spbendApi
-     *
-     * @return an instance of java.lang.String
-     */
-    @GET
-    @Produces("application/json")
-    public String getJson() {
-        //TODO return proper representation object
-        throw new UnsupportedOperationException();
-    }
+
 
     /**
      * PUT receive amount equal to price at current rates. 
